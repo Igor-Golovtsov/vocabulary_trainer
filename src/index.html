@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <title>English Vocabulary Trainer</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css"
+      integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4"
+      crossorigin="anonymous"
+    />
+  </head>
+
+  <body>
+    <div class="container py-5">
+      <div
+        class="d-flex flex-column align-items-center w-100 text-center mx-auto"
+      >
+        <h2 class="mb-5">English Vocabulary Trainer</h2>
+
+        <div id="trainer">
+          <p class="lead mb-1">
+            Form a valid English word using the given letters
+          </p>
+          <p class="mb-5">
+            Question <span id="current_question"></span> of
+            <span id="total_questions"></span>
+          </p>
+
+          <div>
+            <div
+              id="answer"
+              class="bg-light mx-1 mb-3"
+              style="height: 46px; padding-top: 4px; border-radius: 6px"
+            ></div>
+            <div id="letters"></div>
+          </div>
+        </div>
+
+        <div class="d-none" id="statistics">
+          <p class="lead mb-1">Statistics:</p>
+
+          <table class="table text-left">
+            <tbody>
+              <tr>
+                <td>The number of words collected without mistakes</td>
+                <td id="statistics-without-mistakes">6</td>
+              </tr>
+              <tr>
+                <td>Number of mistakes</td>
+                <td id="statistics-count-mistakes">6</td>
+              </tr>
+              <tr>
+                <td>The word with the highest number of mistakes</td>
+                <td id="statistics-word-with-max-mistakes">6</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div
+          class="modal fade show"
+          id="previous-training-modal"
+          aria-hidden="true"
+        >
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title">Continue the last training session?</h5>
+              </div>
+              <div class="modal-footer">
+                <button
+                  id="previous-training-cancel"
+                  data-action="cancel"
+                  type="button"
+                  class="btn btn-secondary"
+                >
+                  Cancel
+                </button>
+                <button
+                  id="previous-training-continue"
+                  data-action="continue"
+                  type="button"
+                  class="btn btn-primary"
+                >
+                  Continue
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="modal-backdrop fade show"
+          id="previous-training-modal-backdrop"
+          style="display: none"
+        ></div>
+      </div>
+    </div>
+  </body>
+</html>
